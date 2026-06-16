@@ -51,10 +51,17 @@ body{
     margin-bottom: 20px;
 }
 
-.small-images img{
-    width: 50%;
-    height: 220px;
-    object-fit: cover;
+.small-images {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.small-image {
+  flex: 1;
+  width: 50%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* footer */
@@ -63,4 +70,68 @@ footer{
     padding-top: 15px;
     border-top: 1px solid #ccc;
     text-align: center;
+}
+@media (max-width: 600px) {
+
+  .fashion-section {
+    flex-direction: column;
+  }
+
+  .small-images {
+    grid-template-columns: 1fr;
+  }
+
+  .small-image {
+    height: auto;
+  }
+}
+
+/* NAVBAR BASE */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 25px;
+  border-bottom: 1px solid #ddd;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
